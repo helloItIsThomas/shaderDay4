@@ -13,8 +13,7 @@ float plot(vec2 uv){
 }
 
 float plot2(vec2 uv, float pct){
-  return  smoothstep( pct-0.2, pct, uv.y) -
-          smoothstep( pct, pct+0.02, uv.y);
+  return smoothstep( pct-0.2, pct, uv.y) - smoothstep( pct, pct+0.01, uv.y);
 }
 
 void main(){
@@ -22,8 +21,9 @@ void main(){
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
     vec4 outColor = vec4(0.0, 0.0, 0.0, 1.0);
 
-    float y = smoothstep(0.0, 1.0, uv.x);
-    outColor.r = plot2(uv, nTime);
+    float y = smoothstep(0.0,1.0,uv.x);
+    y = y;
+    outColor.r = plot2(uv, y);
 
     gl_FragColor = outColor;
 }
