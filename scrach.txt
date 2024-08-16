@@ -1,0 +1,4 @@
+ok, so a way we can make a diagonal line is by taking the absolute value of pos.x - pos.y.
+this works because when x = 0 and y = 1, the value is 1. when x = 1 and y = 1, the value is 0. and when x = 0 and y = 0, the value is 0.
+
+How can i make 
